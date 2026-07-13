@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia IronFit | Seu Objetivo É Nossa Meta</title>
+    <style>
+        /* --- ESTILIZAÇÃO CSS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho e Menu */
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #ff4500;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff4500;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff4500;
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #ff4500;
+            text-transform: uppercase;
+        }
+
+        /* Seção 1: Início (Hero) */
+        #inicio {
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos') no-repeat center center/cover;
+            padding: 100px 20px;
+            border-radius: 8px;
+        }
+
+        #inicio h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        /* Seção 2: Modalidades */
+        .grid-modalidades {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card-modalidade {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .card-modalidade img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-modalidade h3 {
+            padding: 15px 10px 5px 10px;
+            color: #ff4500;
+        }
+
+        .card-modalidade p {
+            padding: 0 15px 15px 15px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        /* Seção 3: Planos */
+        .grid-planos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .card-plano {
+            background-color: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .card-plano.destaque {
+            border-color: #ff4500;
+            transform: scale(1.05);
+        }
+
+        .card-plano h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .preco {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff4500;
+            margin-bottom: 20px;
+        }
+
+        .card-plano ul {
+            list-style: none;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .card-plano ul li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        /* Seção 4: Equipe */
+        .grid-equipe {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card-membro {
+            text-align: center;
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .card-membro img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff4500;
+            margin-bottom: 15px;
+        }
+
+        /* Seção 5: Matrícula (Formulário) */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #1a1a1a;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ff4500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            background-color: #2b2b2b;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .btn-enviar {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff4500;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-enviar:hover {
+            background-color: #cd3700;
+        }
+
+        /* Link Externo e Rodapé */
+        .link-externo-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .link-externo {
+            color: #ff4500;
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO E MENU (Requisitos) -->
+    <header>
+        <nav>
+            <div class="logo">IRONFIT</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#modalidades">Modalidades</a></li>
+                <li><a href="#planos">Planos</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#matricula">Matrícula</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SEÇÃO 1: INÍCIO (Hero) -->
+    <section id="inicio">
+        <h1>MUDE SEU CORPO, MUDE SUA VIDA</h1>
+        <p>A melhor estrutura da região com profissionais prontos para guiar você rumo aos seus resultados.</p>
+    </section>
+
+    <!-- SEÇÃO 2: MODALIDADES -->
+    <section id="modalidades">
+        <h2>Nossas Modalidades</h2>
+        <div class="grid-modalidades">
+            <div class="card-modalidade">
+                <img src="musculaçao.jpg" alt="Musculação">
+                <h3>Musculação</h3>
+                <p>Equipamentos de última geração para hipertrofia e definição.</p>
+            </div>
+            <div class="card-modalidade">
+                <img src="crossfit.jpg" alt="Crossfit">
+                <h3>Crossfit</h3>
+                <p>Treinos de alta intensidade para superar todos os seus limites.</p>
+            </div>
+            <div class="card-modalidade">
+                <img src="danca.jpg" alt="Dança / Ritmos">
+                <h3>Ritmos</h3>
+                <p>Queime calorias e divirta-se com as melhores coreografias.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 3: PLANOS -->
+    <section id="planos">
+        <h2>Nossos Planos</h2>
+        <div class="grid-planos">
+            <div class="card-plano">
+                <h3>Plano Mensal</h3>
+                <div class="preco">R$ 99,90</div>
+                <ul>
+                    <li>✓ Acesso à musculação</li>
+                    <li>✓ Avaliação física inicial</li>
+                    <li>✗ Sem aulas de ginástica</li>
+                </ul>
+            </div>
+            <div class="card-plano destaque">
+                <h3>Plano Anual</h3>
+                <div class="preco">R$ 79,90<span style="font-size:14px">/mês</span></div>
+                <ul>
+                    <li>✓ Acesso livre total</li>
+                    <li>✓ Todas as modalidades</li>
+                    <li>✓ Avaliação física mensal</li>
+                    <li>✓ Leve 1 amigo por mês</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 4: EQUIPE -->
+    <section id="equipe">
+        <h2>Nossos Especialistas</h2>
+        <div class="grid-equipe">
+            <div class="card-membro">
+                <img src="willian.jpg" alt="Treinador Willian">
+                <h3>Willian</h3>
+                <p>Coordenador de Musculação</p>
+            </div>
+            <div class="card-membro">
+                <img src="ana.jpg" alt="Treinadora Ana Trindade">
+                <h3>Ana Trindade</h3>
+                <p>Especialista em Crossfit</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 5: MATRÍCULA -->
+    <section id="matricula">
+        <h2>Faça Sua Matrícula</h2>
+        <div class="form-container">
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail de Contato:</label>
